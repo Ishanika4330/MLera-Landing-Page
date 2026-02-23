@@ -9,7 +9,6 @@ Users upload a job description they are targeting, and MLera’s "structured pat
 **The Improvement:** MLera should move from "Course Completion" to "Production-Ready Attestations." Instead of a certificate, users earn a verified Deployment Badge that links directly to a live, hosted API of a model they trained and deployed through the MLera sandbox.
 
 **To improve landing page conversion:** 
-
 I suggest a Beta version (free trial in the future) that would allow first-time users to experience the learning environment through selective courses/videos.
 
 **Design Decisions:**
@@ -17,19 +16,14 @@ I suggest a Beta version (free trial in the future) that would allow first-time 
 2. Art Direction & Branding: I embraced the dark purple background from your logo and used the Salmon and Purple as primary gradient accents.
 3. Typography: I selected Outfit for the headings to give it a tech-forward look and paired it with Inter for maximum readability in the body text.
 4. Animations & Interactivity: I used framer-motion to add smooth, scroll-triggered entry animations and interactive hover states to cards, making the UI feel alive without being overwhelming.
-5. Atomic Component Structure: UI elements are isolated in /components/ui for maximum reusability.
-6. Type Safety: Implemented shared schemas to prevent runtime errors and ensure a "contract" between frontend and backend.
 
-**The Stack**  
-Frontend: React 19 + Vite  
-Backend: Node.js/Express  
-Styling: Tailwind CSS  
-Validation: Zod  
+**The Stack:** Built with React 19, Vite, Node.js/Express, and Tailwind CSS v4.
 
-**Why I structured it this way:**  
-In the package.json, I configured a dev script that handles the orchestration of the frontend and backend.  
-**Concurrency:** Instead of making a developer open two terminals, the setup uses a single command to boost developer velocity.  
-**Vite Proxy:** The frontend is configured to proxy API requests to the Express server, preventing CORS issues during development  
+**Atomic Structure:** UI components are isolated in @/components/ui (using Shadcn primitives) for maximum reusability and brand consistency.
+
+**Type Safety:** Utilized Zod for schema validation to ensure a strict data contract between the frontend and backend.
+
+**Full-Stack Orchestration:** I configured a custom dev script in package.json to run the frontend and backend concurrently via a single command, utilizing a Vite Proxy to eliminate CORS issues during development.
 
 **Other improvements:**
 1. Skill Tree: Replacing static course lists with an interactive Skill Tree visualization. By showing users exactly where they are in the "Gradient Descent to Transformers" pipeline, it triggers a psychological need to "complete the map".
@@ -38,7 +32,14 @@ In the package.json, I configured a dev script that handles the orchestration of
 
 **Local Setup Instructions**  
 
-git clone https://github.com/Ishanika4330/MLera-Landing-Page.git  
-cd MLera-Landing-Page  
-npm install  
-npm run dev  
+1. Clone the repository  
+git clone https://github.com/Ishanika4330/MLera-Landing-Page.git
+
+2. Enter the directory  
+cd MLera-Landing-Page
+
+3. Install dependencies  
+npm install
+
+4. Run the full-stack development environment  
+npm run dev
